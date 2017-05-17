@@ -13,6 +13,7 @@ import com.fh.entity.Page;
 * @version 1.0
  */
 public class User {
+	//测试上传
 	private String USER_ID;		//用户id
 	private String USERNAME;	//用户名
 	private String PASSWORD; 	//密码
