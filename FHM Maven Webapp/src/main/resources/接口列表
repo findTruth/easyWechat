@@ -1,0 +1,12 @@
+
+
+密码生成接口
+加密参数：username
+连接：xxx/FHM/appbase/pushpassword.do
+参数：username&password
+ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
+
+1.3 注销接口
+加密参数：uid
+连接：xxx/FHM/appuser/useroff.do
+参数：uid

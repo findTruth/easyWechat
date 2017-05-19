@@ -1,4 +1,4 @@
-package com.fh.controller.app.appuser;
+package com.fh.controller.app.EW;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,41 +29,35 @@ import com.fh.util.Tools;
  */
 @Controller
 @RequestMapping(value="/appuser")
-public class IntAppuserController extends BaseController {
+public class appUserController extends BaseController {
     
-	@Resource(name="appuserService")
-	private AppuserService appuserService;
-	
-	/**
-	 * 根据用户名获取会员信息
-	 */
-	@RequestMapping(value="/getAppuserByUm")
+	@RequestMapping(value="/useroff")
 	@ResponseBody
-	public Object getAppuserByUsernmae(){
-		logBefore(logger, "根据用户名获取会员信息");
+	public Object useroff(){
+		logBefore(logger, "用户注销");
 		Map<String,Object> map = new HashMap<String,Object>();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		String result = "00";
+		int result_code = 0;
+		String result_message = "success";
 		
 		try{
-			if(Tools.checkKey("USERNAME", pd.getString("FKEY"))){	//检验请求key值是否合法
-				if(AppUtil.checkParam("getAppuserByUsernmae", pd)){	//检查参数
-					pd = appuserService.findByUId(pd);
-					
-					map.put("pd", pd);
-					result = (null == pd) ?  "02" :  "01";
-					
+			if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
+				if(AppUtil.checkParam("useroff", pd)){	//检查参数
+					//TODO 留下注销接口
 				}else {
-					result = "03";
+					result_code = -1;
+					result_message = "参数错误";
 				}
 			}else{
-				result = "05";
+				result_code = -3;
+				result_message = "key值不合法";
 			}
 		}catch (Exception e){
 			logger.error(e.toString(), e);
 		}finally{
-			map.put("result", result);
+			map.put("result_code", result_code);
+			map.put("result_message", result_message);
 			logAfter(logger);
 		}
 		

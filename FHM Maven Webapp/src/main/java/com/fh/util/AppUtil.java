@@ -32,6 +32,12 @@ public class AppUtil  {
 		}else if(method=="getAppuserByUsernmae"){//根据用户名获取会员信息
 			paramArray = Const.APP_GETAPPUSER_PARAM_ARRAY;  
 			valueArray = Const.APP_GETAPPUSER_VALUE_ARRAY;
+		}else if(method=="useroff"){
+			paramArray = Const.APP_USEROFF_PARAM_ARRAY;  
+			valueArray = Const.APP_USEROFF_VALUE_ARRAY;
+		}else if(method=="pushpassword"){
+			paramArray = Const.APP_PUSHPASSWORD_PARAM_ARRAY;  
+			valueArray = Const.APP_PUSHPASSWORD_VALUE_ARRAY;
 		}
 		
 		

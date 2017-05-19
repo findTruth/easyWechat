@@ -46,7 +46,13 @@ public class Const {
 	public static final String[] APP_GETAPPUSER_PARAM_ARRAY = new String[]{"USERNAME"};
 	public static final String[] APP_GETAPPUSER_VALUE_ARRAY = new String[]{"用户名"};
 	
-
+	//app注销接口
+	public static final String[] APP_USEROFF_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_USEROFF_VALUE_ARRAY = new String[]{"用户id"};
+	
+	//app密码生成接口
+	public static final String[] APP_PUSHPASSWORD_PARAM_ARRAY = new String[]{"username","password"};
+	public static final String[] APP_PUSHPASSWORD_VALUE_ARRAY = new String[]{"账号","密码"};
 	
 
 	

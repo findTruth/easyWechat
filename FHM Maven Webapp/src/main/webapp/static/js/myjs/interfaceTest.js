@@ -41,7 +41,7 @@ function sendSever(){
 	$.ajax({
 		type: "POST",
 		url: locat+'/tool/severTest.do',
-    	data: {serverUrl:$("#serverUrl").val()+"&FKEY="+$.md5(paraname+nowtime+',fh,'),requestMethod:$("#S_TYPE").val(),tm:new Date().getTime()},
+    	data: {serverUrl:$("#serverUrl").val()+"&FKEY="+$.md5(paraname+'jerry'+nowtime),requestMethod:$("#S_TYPE").val(),tm:new Date().getTime()},
 		dataType:'json',
 		cache: false,
 		success: function(data){
