@@ -103,4 +103,46 @@
 		</foreach>
 	</delete>
 	
+	<!-- 申请列表(uid) -->
+	<select id="listById" parameterType="pd" resultType="pd">
+		select
+				a.UID,	
+				a.AFUID,	
+				a.MESSAGE,	
+				a.TIME,	
+				a.ADDSTATUS,	
+				a.TSTATUS,	
+				a.EADDFRIEND_ID,
+				b.PIC_URL
+		from 
+				TB_EADDFRIEND a,TB_euser b
+		where
+		 		a.afuid = b.esuer_id and a.uid =#{uid}
+	</select>
+	<!-- 被申请列表(id) -->
+	<select id="blistById" parameterType="pd" resultType="pd">
+		select
+				a.UID,	
+				a.AFUID,	
+				a.MESSAGE,	
+				a.TIME,	
+				a.ADDSTATUS,	
+				a.TSTATUS,	
+				a.EADDFRIEND_ID,
+				b.PIC_URL
+		from 
+				TB_EADDFRIEND a,TB_euser b
+		where
+		 		a.afuid = b.esuer_id and a.afuid =#{uid}
+	</select>
+	
+	<!-- 同意申请，修改状态(addstatus) -->
+	<update id="editById" parameterType="pd">
+		update  TB_EADDFRIEND
+			set 
+				ADDSTATUS = #{agree},
+			where 
+				UID = #{uid} or AFUID = #{touid} 
+	</update>
+	
 </mapper>

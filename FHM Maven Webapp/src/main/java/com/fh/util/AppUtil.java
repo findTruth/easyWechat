@@ -38,6 +38,18 @@ public class AppUtil  {
 		}else if(method=="pushpassword"){
 			paramArray = Const.APP_PUSHPASSWORD_PARAM_ARRAY;  
 			valueArray = Const.APP_PUSHPASSWORD_VALUE_ARRAY;
+		}else if(method=="register"){
+			paramArray = Const.APP_REGISTER_PARAM_ARRAY;  
+			valueArray = Const.APP_REGISTER_VALUE_ARRAY;
+		}else if(method=="linklist"){
+			paramArray = Const.APP_linklist_PARAM_ARRAY;  
+			valueArray = Const.APP_linklist_VALUE_ARRAY;
+		}else if(method=="friendlist"){
+			paramArray = Const.APP_friendlist_PARAM_ARRAY;  
+			valueArray = Const.APP_friendlist_VALUE_ARRAY;
+		}else if(method=="agree"){
+			paramArray = Const.APP_agree_PARAM_ARRAY;  
+			valueArray = Const.APP_agree_VALUE_ARRAY;
 		}
 		
 		

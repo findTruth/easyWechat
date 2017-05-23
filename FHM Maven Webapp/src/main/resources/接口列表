@@ -10,3 +10,18 @@ ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
 加密参数：uid
 连接：xxx/FHM/appuser/useroff.do
 参数：uid
+
+3.1 通讯录接口
+加密参数：uid
+连接：xxx/FHM/applink/linklist.do
+参数：uid
+
+4.1 好友申请列表接口
+加密参数：uid
+连接：xxx/FHM/appfriend/friendlist.do
+参数：uid type
+
+4.2 同意好友请求接口
+加密参数：uid
+连接：xxx/FHM/appfriend/agree.do
+参数：uid touid agree

@@ -54,6 +54,19 @@ public class Const {
 	public static final String[] APP_PUSHPASSWORD_PARAM_ARRAY = new String[]{"username","password"};
 	public static final String[] APP_PUSHPASSWORD_VALUE_ARRAY = new String[]{"账号","密码"};
 	
-
+	//app注册接口
+	public static final String[] APP_REGISTER_PARAM_ARRAY = new String[]{"username","password","nickname","sex","phone","email","sign"};
+	public static final String[] APP_REGISTER_VALUE_ARRAY = new String[]{"账号","密码","昵称","性别","电话","邮箱","个性签名"};
 	
+	//app通讯录列表
+	public static final String[] APP_linklist_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_linklist_VALUE_ARRAY = new String[]{"用户id"};
+	
+	//app好友申请列表
+	public static final String[] APP_friendlist_PARAM_ARRAY = new String[]{"type","uid"};
+	public static final String[] APP_friendlist_VALUE_ARRAY = new String[]{"0 被申请 1 我申请","用户id"};
+	
+	//app同意好友请求
+	public static final String[] APP_agree_PARAM_ARRAY = new String[]{"uid","touid","agree"};
+	public static final String[] APP_agree_VALUE_ARRAY = new String[]{"用户id","申请人id","0 同意 1 不同意"};
 }

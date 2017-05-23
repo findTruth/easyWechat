@@ -9,9 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.druid.sql.dialect.oracle.ast.stmt.OracleIfStatement.Else;
 import com.fh.controller.base.BaseController;
-import com.fh.service.EW.euser.EuserService;
-import com.fh.service.system.appuser.AppuserService;
+import com.fh.service.EW.eaddfriend.EaddfriendService;
 import com.fh.util.AppUtil;
 import com.fh.util.PageData;
 import com.fh.util.Tools;
@@ -29,25 +29,31 @@ import com.fh.util.Tools;
   * 05  FKEY验证失败
  */
 @Controller
-@RequestMapping(value="/appuser")
-public class appUserController extends BaseController {
-	@Resource(name="euserService")
-	private EuserService euserService;
+@RequestMapping(value="/appfriend")
+public class appfriendController extends BaseController {
+	@Resource(name="eaddfriendService")
+	private EaddfriendService eaddfriendService;
 	
-	@RequestMapping(value="/useroff")
+	@RequestMapping(value="/friendlist")
 	@ResponseBody
-	public Object useroff(){
-		logBefore(logger, "用户注销");
+	public Object linklist(){
+		logBefore(logger, "好友申请列表");
 		Map<String,Object> map = new HashMap<String,Object>();
 		PageData pd = new PageData();
 		pd = this.getPageData();
 		int result_code = 0;
 		String result_message = "success";
-		
 		try{
 			if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
-				if(AppUtil.checkParam("useroff", pd)){	//检查参数
-					//TODO 留下注销接口
+				if(AppUtil.checkParam("friendlist", pd)){	//检查参数
+						if (pd.get("type").equals("1")) {
+							map.put("data", eaddfriendService.listById(pd));
+						}else if (pd.get("type").equals("0")) {
+							map.put("data", eaddfriendService.blistById(pd));
+						}else {
+							result_code = -4101;
+							result_message = "type值错误";
+						}	
 				}else {
 					result_code = -1;
 					result_message = "参数错误";
@@ -67,25 +73,25 @@ public class appUserController extends BaseController {
 		return AppUtil.returnObject(new PageData(), map);
 	}
 	
-	@RequestMapping(value="/register")
+	@RequestMapping(value="/agree")
 	@ResponseBody
-	public Object register(){
-		logBefore(logger, "用户注册");
+	public Object agree(){
+		logBefore(logger, "同意好友请求");
 		Map<String,Object> map = new HashMap<String,Object>();
 		PageData pd = new PageData();
 		pd = this.getPageData();
 		int result_code = 0;
 		String result_message = "success";
-		
 		try{
-			if(Tools.checkKey("password", pd.getString("FKEY"))){	//检验请求key值是否合法
-				if(AppUtil.checkParam("register", pd)){	//检查参数
-					//TODO 留下注册接口
-//					if (euserService.findByUsername(pd).get("euser_id")) {
-//						
-//					}
-//					pd.put("EUSER_ID", this.get32UUID());	//主键
-//					euserService.save(pd);
+			if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
+				if(AppUtil.checkParam("agree", pd)){	//检查参数
+						if (pd.get("agree").equals("0")) {
+							//修改状态
+							eaddfriendService.editById(pd);
+							//添加好友到通讯录
+							
+							
+						}
 				}else {
 					result_code = -1;
 					result_message = "参数错误";
@@ -104,8 +110,6 @@ public class appUserController extends BaseController {
 		
 		return AppUtil.returnObject(new PageData(), map);
 	}
-	
-	
 }
 	
  
