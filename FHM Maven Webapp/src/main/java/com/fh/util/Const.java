@@ -54,6 +54,8 @@ public class Const {
 	public static final String[] APP_PUSHPASSWORD_PARAM_ARRAY = new String[]{"username","password"};
 	public static final String[] APP_PUSHPASSWORD_VALUE_ARRAY = new String[]{"账号","密码"};
 	
-
+    //app最近聊天列表接口
+	public static final String[] APP_PUSHCHATLIST_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_PUSHCHATLIST_VALUE_ARRAY = new String[]{"用户id"};
 	
 }

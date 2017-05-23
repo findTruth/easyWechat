@@ -38,6 +38,9 @@ public class AppUtil  {
 		}else if(method=="pushpassword"){
 			paramArray = Const.APP_PUSHPASSWORD_PARAM_ARRAY;  
 			valueArray = Const.APP_PUSHPASSWORD_VALUE_ARRAY;
+		}else if(method=="pushchatlist"){//最近聊天列表
+			paramArray = Const.APP_PUSHCHATLIST_PARAM_ARRAY;
+			valueArray = Const.APP_PUSHCHATLIST_VALUE_ARRAY;
 		}
 		
 		
