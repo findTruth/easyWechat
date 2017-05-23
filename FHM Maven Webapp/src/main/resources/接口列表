@@ -11,6 +11,7 @@ ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
 连接：xxx/FHM/appuser/useroff.do
 参数：uid
 
+<<<<<<< HEAD
 3.1 通讯录接口
 加密参数：uid
 连接：xxx/FHM/applink/linklist.do
@@ -25,3 +26,9 @@ ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
 加密参数：uid
 连接：xxx/FHM/appfriend/agree.do
 参数：uid touid agree
+=======
+2.1 最近聊天列表接口
+加密参数：uid
+连接：xxx/FHM/apptake/pushchatlist.do
+参数：uid
+>>>>>>> branch 'master' of https://github.com/findTruth/easyWechat_webapp.git

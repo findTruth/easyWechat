@@ -50,6 +50,9 @@ public class AppUtil  {
 		}else if(method=="agree"){
 			paramArray = Const.APP_agree_PARAM_ARRAY;  
 			valueArray = Const.APP_agree_VALUE_ARRAY;
+		}else if(method=="pushchatlist"){//最近聊天列表
+			paramArray = Const.APP_PUSHCHATLIST_PARAM_ARRAY;
+			valueArray = Const.APP_PUSHCHATLIST_VALUE_ARRAY;
 		}
 		
 		

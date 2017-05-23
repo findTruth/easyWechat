@@ -57,7 +57,11 @@ public class Const {
 	//app注册接口
 	public static final String[] APP_REGISTER_PARAM_ARRAY = new String[]{"username","password","nickname","sex","phone","email","sign"};
 	public static final String[] APP_REGISTER_VALUE_ARRAY = new String[]{"账号","密码","昵称","性别","电话","邮箱","个性签名"};
-	
+    
+	//app最近聊天列表接口
+	public static final String[] APP_PUSHCHATLIST_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_PUSHCHATLIST_VALUE_ARRAY = new String[]{"用户id"};
+
 	//app通讯录列表
 	public static final String[] APP_linklist_PARAM_ARRAY = new String[]{"uid"};
 	public static final String[] APP_linklist_VALUE_ARRAY = new String[]{"用户id"};
