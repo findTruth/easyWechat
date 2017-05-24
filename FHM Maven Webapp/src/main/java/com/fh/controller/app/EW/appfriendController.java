@@ -88,7 +88,7 @@ public class appfriendController extends BaseController {
 						if (pd.get("agree").equals("0")) {
 							//修改状态
 							eaddfriendService.editById(pd);
-							//添加好友到通讯录
+							//添加好友到通讯录（未完成）
 							
 							
 						}
@@ -110,6 +110,104 @@ public class appfriendController extends BaseController {
 		
 		return AppUtil.returnObject(new PageData(), map);
 	}
+
+	@RequestMapping(value="/friendselect")
+	@ResponseBody
+	public Object friendselect(){
+		logBefore(logger, "加好友模糊查询");
+		Map<String,Object> map = new HashMap<String,Object>();
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		int result_code = 0;
+		String result_message = "success";
+		try{
+			if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
+				if(AppUtil.checkParam("friendselect", pd)){	//检查参数
+					System.out.println("11");
+					map.put("data", eaddfriendService.findBymessage(pd));
+				}else {
+					result_code = -1;
+					result_message = "参数错误";
+				}
+			}else{
+				result_code = -3;
+				result_message = "key值不合法";
+			}
+		}catch (Exception e){
+			logger.error(e.toString(), e);
+		}finally{
+			map.put("result_code", result_code);
+			map.put("result_message", result_message);
+			logAfter(logger);
+		}
+		
+		return AppUtil.returnObject(new PageData(), map);
+	}
+	
+	@RequestMapping(value="/friendinfo")
+	@ResponseBody
+	public Object friendinfo(){
+		logBefore(logger, "好友信息查询");
+		Map<String,Object> map = new HashMap<String,Object>();
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		int result_code = 0;
+		String result_message = "success";
+		try{
+			if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
+				if(AppUtil.checkParam("friendinfo", pd)){	//检查参数
+					map.put("data", eaddfriendService.findByUid(pd));
+				}else {
+					result_code = -1;
+					result_message = "参数错误";
+				}
+			}else{
+				result_code = -3;
+				result_message = "key值不合法";
+			}
+		}catch (Exception e){
+			logger.error(e.toString(), e);
+		}finally{
+			map.put("result_code", result_code);
+			map.put("result_message", result_message);
+			logAfter(logger);
+		}
+		
+		return AppUtil.returnObject(new PageData(), map);
+	}
+	
+	@RequestMapping(value="/delfriend")
+	@ResponseBody
+	public Object delfriend(){
+		logBefore(logger, "删除好友接口");
+		Map<String,Object> map = new HashMap<String,Object>();
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		int result_code = 0;
+		String result_message = "success";
+		try{
+			if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
+				if(AppUtil.checkParam("delfriend", pd)){	//检查参数
+					eaddfriendService.deleteByuid(pd);
+				}else {
+					result_code = -1;
+					result_message = "参数错误";
+				}
+			}else{
+				result_code = -3;
+				result_message = "key值不合法";
+			}
+		}catch (Exception e){
+			logger.error(e.toString(), e);
+		}finally{
+			map.put("result_code", result_code);
+			map.put("result_message", result_message);
+			logAfter(logger);
+		}
+		
+		return AppUtil.returnObject(new PageData(), map);
+	}
+	
 }
 	
  

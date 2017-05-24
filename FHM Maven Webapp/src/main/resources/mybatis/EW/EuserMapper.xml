@@ -155,4 +155,16 @@
 			USERNAME = #{username}
 	</select>
 	
+	<!-- 通过message模糊查询 -->
+	<select id="findByMessage" parameterType="pd" resultType="pd">
+		select 
+			NICKNAME,		
+			PIC_URL,	
+			SEX	
+		from 
+			TB_EUSER
+		where 
+			USERNAME like concat('%',#{username},'%')
+	</select>
+	
 </mapper>

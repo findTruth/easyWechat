@@ -50,6 +50,15 @@ public class AppUtil  {
 		}else if(method=="agree"){
 			paramArray = Const.APP_agree_PARAM_ARRAY;  
 			valueArray = Const.APP_agree_VALUE_ARRAY;
+		}else if(method=="friendselect"){
+			paramArray = Const.APP_friendselect_PARAM_ARRAY;  
+			valueArray = Const.APP_friendselect_VALUE_ARRAY;
+		}else if(method=="friendinfo"){
+			paramArray = Const.APP_friendinfo_PARAM_ARRAY;  
+			valueArray = Const.APP_friendinfo_VALUE_ARRAY;
+		}else if(method=="delfriend"){
+			paramArray = Const.APP_delfriend_PARAM_ARRAY;  
+			valueArray = Const.APP_delfriend_VALUE_ARRAY;
 		}else if(method=="pushchatlist"){//最近聊天列表
 			paramArray = Const.APP_PUSHCHATLIST_PARAM_ARRAY;
 			valueArray = Const.APP_PUSHCHATLIST_VALUE_ARRAY;

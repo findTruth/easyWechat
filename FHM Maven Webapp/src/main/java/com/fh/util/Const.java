@@ -73,4 +73,17 @@ public class Const {
 	//app同意好友请求
 	public static final String[] APP_agree_PARAM_ARRAY = new String[]{"uid","touid","agree"};
 	public static final String[] APP_agree_VALUE_ARRAY = new String[]{"用户id","申请人id","0 同意 1 不同意"};
+
+	//app加好友模糊查询
+	public static final String[] APP_friendselect_PARAM_ARRAY = new String[]{"uid","message"};
+	public static final String[] APP_friendselect_VALUE_ARRAY = new String[]{"用户id","查询内容"};
+
+	//app好友信息查询
+	public static final String[] APP_friendinfo_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_friendinfo_VALUE_ARRAY = new String[]{"好友id"};
+
+	//app删除好友
+	public static final String[] APP_delfriend_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_delfriend_VALUE_ARRAY = new String[]{"好友id"};
+
 }

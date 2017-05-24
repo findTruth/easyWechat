@@ -107,14 +107,14 @@
 	</select>
 	
 	<!-- 同意申请后，添加好友-->
-	<insert id="save" parameterType="pd">
-		insert into TB_ELINKBOOK(
-			UID,	
-			FUID,	
-			TIME,	
-			UNICKNAME,	
-			ELINKBOOK_ID
-		) (select ) 
+	
+	
+	
+	<!-- 删除好友-->
+	<insert id="deleteByuid" parameterType="pd">
+		delete from TB_ELINKBOOK
+		where 
+			FUID = #{uid}
 	</insert>
 	
 </mapper>

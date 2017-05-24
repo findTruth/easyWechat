@@ -140,9 +140,37 @@
 	<update id="editById" parameterType="pd">
 		update  TB_EADDFRIEND
 			set 
-				ADDSTATUS = #{ },
+				ADDSTATUS = 1,
 			where 
 				UID = #{uid} or AFUID = #{touid} 
 	</update>
+	
+	<!-- 通过message模糊查询 -->
+	<select id="findBymessage" parameterType="pd" resultType="pd">
+		select 
+			NICKNAME,		
+			PIC_URL,	
+			SEX	
+		from 
+			TB_EUSER
+		where 
+			USERNAME like concat('%',#{message},'%')
+	</select>
+	
+	<!-- 通过uid查询 -->
+	<select id="findByUid" parameterType="pd" resultType="pd">
+		select 
+			NICKNAME,		
+			PIC_URL,	
+			SEX,
+			PHONE,
+			EMAIL,
+			SIGN,
+			STATUS
+		from 
+			TB_EUSER
+		where 
+			euser_id =#{uid}
+	</select>
 	
 </mapper>
