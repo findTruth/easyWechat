@@ -13,5 +13,10 @@ ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
 
 2.1 最近聊天列表接口
 加密参数：uid
-连接：xxx/FHM/apptake/pushchatlist.do
+连接：xxx/FHM/apptake/closetake.do
+参数：uid
+
+2.2 聊天记录接口
+加密参数：uid
+连接：xxx/FHM/apptake/takelist.do
 参数：uid

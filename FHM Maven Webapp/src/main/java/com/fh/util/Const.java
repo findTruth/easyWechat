@@ -55,7 +55,11 @@ public class Const {
 	public static final String[] APP_PUSHPASSWORD_VALUE_ARRAY = new String[]{"账号","密码"};
 	
     //app最近聊天列表接口
-	public static final String[] APP_PUSHCHATLIST_PARAM_ARRAY = new String[]{"uid"};
-	public static final String[] APP_PUSHCHATLIST_VALUE_ARRAY = new String[]{"用户id"};
+	public static final String[] APP_CLOSETAKE_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_CLOSETAKE_VALUE_ARRAY = new String[]{"用户id"};
+	
+	//app聊天记录接口
+	public static final String[] APP_TAKELIST_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_TAKELIST_VALUE_ARRAY = new String[]{"用户id"};
 	
 }
