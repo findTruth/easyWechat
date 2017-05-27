@@ -21,7 +21,7 @@ ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
 连接：xxx/FHM/appfriend/friendlist.do
 参数：uid type
 
-4.2 同意好友请求接口(还有一点问题)
+4.2 同意好友请求接口(有点问题还需要讨论)
 加密参数：uid
 连接：xxx/FHM/appfriend/agree.do
 参数：uid touid agree
