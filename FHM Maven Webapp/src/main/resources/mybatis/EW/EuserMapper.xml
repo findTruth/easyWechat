@@ -19,18 +19,18 @@
 			STATUS,	
 			EUSER_ID
 		) values (
-			#{USERNAME},	
-			#{PASSWORD},	
-			#{NICKNAME},	
-			#{STARTTIME},	
-			#{LASTTIME},	
-			#{PIC_URL},	
-			#{SEX},	
-			#{PHONE},	
-			#{EMAIL},	
-			#{SIGN},	
-			#{STATUS},	
-			#{EUSER_ID}
+			#{username},	
+			#{password},	
+			#{nickname},	
+			#{starttime},	
+			#{lasttime},	
+			#{pic_url},	
+			#{sex},	
+			#{phone},	
+			#{email},	
+			#{sign},	
+			#{status},	
+			#{euser_id}
 		)
 	</insert>
 	
@@ -133,5 +133,38 @@
                  #{item}
 		</foreach>
 	</delete>
+	
+	<!-- 通过username获取数据 -->
+	<select id="findByUsername" parameterType="pd" resultType="pd">
+		select 
+			USERNAME,	
+			PASSWORD,	
+			NICKNAME,	
+			STARTTIME,	
+			LASTTIME,	
+			PIC_URL,	
+			SEX,	
+			PHONE,	
+			EMAIL,	
+			SIGN,	
+			STATUS,	
+			EUSER_ID
+		from 
+			TB_EUSER
+		where 
+			USERNAME = #{username}
+	</select>
+	
+	<!-- 通过message模糊查询 -->
+	<select id="findByMessage" parameterType="pd" resultType="pd">
+		select 
+			NICKNAME,		
+			PIC_URL,	
+			SEX	
+		from 
+			TB_EUSER
+		where 
+			USERNAME like concat('%',#{username},'%')
+	</select>
 	
 </mapper>

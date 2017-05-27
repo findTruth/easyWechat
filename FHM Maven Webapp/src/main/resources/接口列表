@@ -11,6 +11,36 @@ ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
 连接：xxx/FHM/appuser/useroff.do
 参数：uid
 
+3.1 通讯录接口
+加密参数：uid
+连接：xxx/FHM/applink/linklist.do
+参数：uid
+
+4.1 好友申请列表接口(感觉还需要传递申请人的id)
+加密参数：uid
+连接：xxx/FHM/appfriend/friendlist.do
+参数：uid type
+
+4.2 同意好友请求接口(还有一点问题)
+加密参数：uid
+连接：xxx/FHM/appfriend/agree.do
+参数：uid touid agree
+
+4.3 加好友模糊查询接口(java.lang.Integer cannot be cast to java.util.List)
+加密参数：uid
+连接：xxx/FHM/appfriend/friendselect.do
+参数：uid message
+
+4.4 好友信息接口(java.lang.Integer cannot be cast to java.util.List)
+加密参数：uid
+连接：xxx/FHM/appfriend/friendinfo.do
+参数：uid
+
+4.5 删除好友接口
+加密参数：uid
+连接：xxx/FHM/appfriend/delfriend.do
+参数：uid 
+
 2.1 最近聊天列表接口
 加密参数：uid
 连接：xxx/FHM/apptake/closetake.do

@@ -66,5 +66,48 @@ public class EaddfriendService {
 		dao.delete("EaddfriendMapper.deleteAll", ArrayDATA_IDS);
 	}
 	
+	/*
+	*申请列表(type)
+	*/
+	public List<PageData> listById(PageData pd)throws Exception{
+		
+		return (List<PageData>)dao.findForList("EaddfriendMapper.listById", pd);
+	}
+	
+	/*
+	*被申请列表(type)
+	*/
+	public List<PageData> blistById(PageData pd)throws Exception{
+		
+		return (List<PageData>)dao.findForList("EaddfriendMapper.blistById", pd);
+	}
+	
+	/*
+	*同意申请，修改状态(addstatus)
+	*/
+	public void editById(PageData pd)throws Exception{
+		dao.update("EaddfriendMapper.editById", pd);
+	}
+	
+	/*
+	*加好友模糊查询(message)
+	*/
+	public List<PageData> findBymessage(PageData pd)throws Exception{
+		return (List<PageData>)dao.update("EaddfriendMapper.findBymessage", pd);
+	}
+	
+	/*
+	*好友信息查询(uid)
+	*/
+	public List<PageData> findByUid(PageData pd)throws Exception{
+		return (List<PageData>)dao.update("EaddfriendMapper.findByUid", pd);
+	}
+	
+	/*
+	*删除好友(uid)
+	*/
+	public void deleteByuid(PageData pd)throws Exception{
+		dao.update("ElinkbookMapper.deleteByuid", pd);
+	}
 }
 

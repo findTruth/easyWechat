@@ -103,4 +103,74 @@
 		</foreach>
 	</delete>
 	
+	<!-- 申请列表(uid) -->
+	<select id="listById" parameterType="pd" resultType="pd">
+		select
+				a.UID,	
+				a.AFUID,	
+				a.MESSAGE,	
+				a.TIME,	
+				a.ADDSTATUS,	
+				a.TSTATUS,	
+				a.EADDFRIEND_ID,
+				b.PIC_URL
+		from 
+				TB_EADDFRIEND a,TB_euser b
+		where
+		 		a.afuid = b.esuer_id and a.uid =#{uid}
+	</select>
+	<!-- 被申请列表(id) -->
+	<select id="blistById" parameterType="pd" resultType="pd">
+		select
+				a.UID,	
+				a.AFUID,	
+				a.MESSAGE,	
+				a.TIME,	
+				a.ADDSTATUS,	
+				a.TSTATUS,	
+				a.EADDFRIEND_ID,
+				b.PIC_URL
+		from 
+				TB_EADDFRIEND a,TB_euser b
+		where
+		 		a.afuid = b.esuer_id and a.afuid =#{uid}
+	</select>
+	
+	<!-- 同意申请，修改状态(addstatus) -->
+	<update id="editById" parameterType="pd">
+		update  TB_EADDFRIEND
+			set 
+				ADDSTATUS = 1,
+			where 
+				UID = #{uid} or AFUID = #{touid} 
+	</update>
+	
+	<!-- 通过message模糊查询 -->
+	<select id="findBymessage" parameterType="pd" resultType="pd">
+		select 
+			NICKNAME,		
+			PIC_URL,	
+			SEX	
+		from 
+			TB_EUSER
+		where 
+			USERNAME like concat('%',#{message},'%')
+	</select>
+	
+	<!-- 通过uid查询 -->
+	<select id="findByUid" parameterType="pd" resultType="pd">
+		select 
+			NICKNAME,		
+			PIC_URL,	
+			SEX,
+			PHONE,
+			EMAIL,
+			SIGN,
+			STATUS
+		from 
+			TB_EUSER
+		where 
+			euser_id =#{uid}
+	</select>
+	
 </mapper>

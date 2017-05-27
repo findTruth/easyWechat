@@ -66,5 +66,11 @@ public class ElinkbookService {
 		dao.delete("ElinkbookMapper.deleteAll", ArrayDATA_IDS);
 	}
 	
+	/*
+	*列表(uid)
+	*/
+	public List<PageData> listByUid(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("ElinkbookMapper.listByUid", pd);
+	}
 }
 
