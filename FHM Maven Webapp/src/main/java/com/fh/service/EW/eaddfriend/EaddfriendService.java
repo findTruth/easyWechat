@@ -90,6 +90,13 @@ public class EaddfriendService {
 	}
 	
 	/*
+	*同意申请，增加到通讯录
+	*/
+	public void saveAgree(PageData pd)throws Exception{
+		dao.update("ElinkbookMapper.saveAgree", pd);
+	}
+	
+	/*
 	*加好友模糊查询(message)
 	*/
 	public List<PageData> findBymessage(PageData pd)throws Exception{

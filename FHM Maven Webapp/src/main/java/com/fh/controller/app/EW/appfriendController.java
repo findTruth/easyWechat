@@ -88,9 +88,8 @@ public class appfriendController extends BaseController {
 						if (pd.get("agree").equals("0")) {
 							//修改状态
 							eaddfriendService.editById(pd);
-							//添加好友到通讯录（未完成）
-							
-							
+							//添加好友到通讯录
+							eaddfriendService.saveAgree(pd);							
 						}
 				}else {
 					result_code = -1;
