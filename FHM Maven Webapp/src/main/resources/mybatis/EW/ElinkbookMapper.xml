@@ -107,8 +107,21 @@
 	</select>
 	
 	<!-- 同意申请后，添加好友-->
-	
-	
+	<insert id="saveAgree" parameterType="pd">
+		insert into TB_ELINKBOOK(
+			UID,	
+			FUID,	
+			TIME,
+			UNICKNAME,	
+			ELINKBOOK_ID
+		) values (
+			#{UID},	
+			#{FUID},	
+			now(),	
+			(select NICKNAME from tb_euser where euser_id=#{FUID}),	
+			#{ELINKBOOK_ID}
+		)
+	</insert>
 	
 	<!-- 删除好友-->
 	<insert id="deleteByuid" parameterType="pd">

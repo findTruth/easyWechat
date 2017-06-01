@@ -90,17 +90,24 @@ public class EaddfriendService {
 	}
 	
 	/*
+	*同意申请，增加到通讯录
+	*/
+	public void saveAgree(PageData pd)throws Exception{
+		dao.update("ElinkbookMapper.saveAgree", pd);
+	}
+	
+	/*
 	*加好友模糊查询(message)
 	*/
 	public List<PageData> findBymessage(PageData pd)throws Exception{
-		return (List<PageData>)dao.update("EaddfriendMapper.findBymessage", pd);
+		return (List<PageData>)dao.findForList("EaddfriendMapper.findBymessage", pd);
 	}
 	
 	/*
 	*好友信息查询(uid)
 	*/
 	public List<PageData> findByUid(PageData pd)throws Exception{
-		return (List<PageData>)dao.update("EaddfriendMapper.findByUid", pd);
+		return (List<PageData>)dao.findForList("EaddfriendMapper.findByUid", pd);
 	}
 	
 	/*

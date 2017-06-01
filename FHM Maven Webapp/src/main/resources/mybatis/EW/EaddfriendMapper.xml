@@ -117,7 +117,7 @@
 		from 
 				TB_EADDFRIEND a,TB_euser b
 		where
-		 		a.afuid = b.esuer_id and a.uid =#{uid}
+		 		a.afuid = b.euser_id and a.uid =#{uid}
 	</select>
 	<!-- 被申请列表(id) -->
 	<select id="blistById" parameterType="pd" resultType="pd">
@@ -133,7 +133,7 @@
 		from 
 				TB_EADDFRIEND a,TB_euser b
 		where
-		 		a.afuid = b.esuer_id and a.afuid =#{uid}
+		 		a.afuid = b.euser_id and a.afuid =#{uid}
 	</select>
 	
 	<!-- 同意申请，修改状态(addstatus) -->
@@ -142,7 +142,7 @@
 			set 
 				ADDSTATUS = 1,
 			where 
-				UID = #{uid} or AFUID = #{touid} 
+				UID = #{uid} and AFUID = #{touid} 
 	</update>
 	
 	<!-- 通过message模糊查询 -->
@@ -154,10 +154,10 @@
 		from 
 			TB_EUSER
 		where 
-			USERNAME like concat('%',#{message},'%')
+			NICKNAME like concat('%',#{message},'%')
 	</select>
 	
-	<!-- 通过uid查询 -->
+	<!-- 好友信息，通过uid查询 -->
 	<select id="findByUid" parameterType="pd" resultType="pd">
 		select 
 			NICKNAME,		
