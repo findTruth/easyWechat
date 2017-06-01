@@ -66,9 +66,9 @@ public class appTakeController extends BaseController {
 	
 	
 	 //聊天记录
-		@RequestMapping(value="/takelist")
-		@ResponseBody
-		public Object takelist(){
+	@RequestMapping(value="/takelist")
+	@ResponseBody
+	public Object takelist(){
 			logBefore(logger, "聊天记录");
 			Map<String,Object> map = new HashMap<String,Object>();
 			PageData pd = new PageData();
@@ -98,39 +98,37 @@ public class appTakeController extends BaseController {
 			
 			return AppUtil.returnObject(new PageData(), map);
 		}
-		
-		
-		//删除最近聊天记录
-				@RequestMapping(value="/delclosetake")
-				@ResponseBody
-				public Object delclosetake(){
-					logBefore(logger, "删除最近聊天记录");
-					Map<String,Object> map = new HashMap<String,Object>();
-					PageData pd = new PageData();
-					pd = this.getPageData();
-					int result_code = 0;
-					String result_message = "success";
-					
-					try{
-						if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
-							if(AppUtil.checkParam("delclosetake", pd)){	//检查参数
-								//TODO 留下删除最近聊天列表接口
-							}else {
-								result_code = -1;
-								result_message = "参数错误";
-							}
-						}else{
-							result_code = -3;
-							result_message = "key值不合法";
-						}
-					}catch (Exception e){
-						logger.error(e.toString(), e);
-					}finally{
-						map.put("result_code", result_code);
-						map.put("result_message", result_message);
-						logAfter(logger);
+	
+	 //删除最近聊天记录
+	@RequestMapping(value="/delclosetake")
+	@ResponseBody
+	public Object delclosetake(){
+			logBefore(logger, "聊天记录");
+			Map<String,Object> map = new HashMap<String,Object>();
+			PageData pd = new PageData();
+			pd = this.getPageData();
+			int result_code = 0;
+			String result_message = "success";		
+			try{
+				if(Tools.checkKey("nid", pd.getString("FKEY"))){	//检验请求key值是否合法
+					if(AppUtil.checkParam("delclosetake", pd)){	//检查参数
+						//TODO 留下最近聊天列表接口
+					}else {
+						result_code = -1;
+						result_message = "参数错误";
 					}
-					
-					return AppUtil.returnObject(new PageData(), map);
+				}else{
+					result_code = -3;
+					result_message = "key值不合法";
 				}
+			}catch (Exception e){
+				logger.error(e.toString(), e);
+			}finally{
+				map.put("result_code", result_code);
+				map.put("result_message", result_message);
+				logAfter(logger);
+			}
+			
+			return AppUtil.returnObject(new PageData(), map);
+		}
 }

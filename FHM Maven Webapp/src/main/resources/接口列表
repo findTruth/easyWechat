@@ -50,3 +50,23 @@ ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
 加密参数：uid
 连接：xxx/FHM/apptake/takelist.do
 参数：uid
+
+2.3 删除最近聊天记录接口
+加密参数：nid
+连接：xxx/FHM/apptake/delclosetake.do
+参数：nid
+
+2.4 查看聊天推送接口
+加密参数：uid
+连接：xxx/FHM/apptake/seetakepush.do
+参数：uid
+
+2.5 发送消息接口
+加密参数：uid
+连接：xxx/FHM/apptake/sendmessage.do
+参数：uid
+
+2.6 修改最近聊天推送状态
+加密参数：nid
+连接：xxx/FHM/apptake/changetakestatus.do
+参数：nid

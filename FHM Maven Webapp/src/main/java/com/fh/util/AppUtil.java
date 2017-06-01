@@ -44,7 +44,9 @@ public class AppUtil  {
 		}else if(method=="takelist"){//聊天记录
 			paramArray = Const.APP_TAKELIST_PARAM_ARRAY;
 			valueArray = Const.APP_TAKELIST_VALUE_ARRAY;
-			valueArray = Const.APP_PUSHPASSWORD_VALUE_ARRAY;
+		}else if(method=="delclosetake"){//删除最近聊天记录
+			paramArray = Const.APP_DELCLOSETAKE_PARAM_ARRAY;
+			valueArray = Const.APP_DELCLOSETAKE_VALUE_ARRAY;
 		}else if(method=="register"){
 			paramArray = Const.APP_REGISTER_PARAM_ARRAY;  
 			valueArray = Const.APP_REGISTER_VALUE_ARRAY;
@@ -66,9 +68,7 @@ public class AppUtil  {
 		}else if(method=="delfriend"){
 			paramArray = Const.APP_delfriend_PARAM_ARRAY;  
 			valueArray = Const.APP_delfriend_VALUE_ARRAY;
-		}else if(method=="pushchatlist"){//最近聊天列表
-			paramArray = Const.APP_PUSHCHATLIST_PARAM_ARRAY;
-			valueArray = Const.APP_PUSHCHATLIST_VALUE_ARRAY;
+		
 		}
 		
 		
