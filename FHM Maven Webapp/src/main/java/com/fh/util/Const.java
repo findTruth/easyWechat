@@ -63,8 +63,8 @@ public class Const {
 	public static final String[] APP_CLOSETAKE_VALUE_ARRAY = new String[]{"用户id"};
 
 	//app聊天记录接口
-	public static final String[] APP_TAKELIST_PARAM_ARRAY = new String[]{"uid"};
-	public static final String[] APP_TAKELIST_VALUE_ARRAY = new String[]{"用户id"};
+	public static final String[] APP_TAKELIST_PARAM_ARRAY = new String[]{"uid","touid","time"};
+	public static final String[] APP_TAKELIST_VALUE_ARRAY = new String[]{"用户id","聊天对象","多少天前"};
 	
 	//app删除最近聊天记录接口
 	public static final String[] APP_DELCLOSETAKE_PARAM_ARRAY = new String[]{"nid"};
@@ -74,9 +74,9 @@ public class Const {
 	public static final String[] APP_SEETAKEPUSH_PARAM_ARRAY = new String[]{"uid"};
 	public static final String[] APP_SEETAKEPUSH_VALUE_ARRAY = new String[]{"用户id"};
 	
-	//发送消息
-	public static final String[] APP_SENDMESSAGE_PARAM_ARRAY = new String[]{"uid"};
-	public static final String[] APP_SENDMESSAGE_VALUE_ARRAY = new String[]{"uid"};
+	//发送消息接口
+	public static final String[] APP_SENDMESSAGE_PARAM_ARRAY = new String[]{"uid","touid","message"};
+	public static final String[] APP_SENDMESSAGE_VALUE_ARRAY = new String[]{"uid","uid","message"};
 	
 	//修改最近聊天推送状态
 	public static final String[] APP_CHANGETAKESTATUS_PARAM_ARRAY = new String[]{"nid"};

@@ -47,6 +47,15 @@ public class AppUtil  {
 		}else if(method=="delclosetake"){//删除最近聊天记录
 			paramArray = Const.APP_DELCLOSETAKE_PARAM_ARRAY;
 			valueArray = Const.APP_DELCLOSETAKE_VALUE_ARRAY;
+		}else if(method=="seetakepush"){//查看聊天推送
+			paramArray = Const.APP_SEETAKEPUSH_PARAM_ARRAY;
+			valueArray = Const.APP_SEETAKEPUSH_VALUE_ARRAY;
+		}else if(method=="sendmessage"){//发送消息
+				paramArray = Const.APP_SENDMESSAGE_PARAM_ARRAY;
+				valueArray = Const.APP_SENDMESSAGE_VALUE_ARRAY;
+		}else if(method=="changetakestatus"){//修改最近消息推送状态
+			paramArray = Const.APP_CHANGETAKESTATUS_PARAM_ARRAY;
+			valueArray = Const.APP_CHANGETAKESTATUS_VALUE_ARRAY;
 		}else if(method=="register"){
 			paramArray = Const.APP_REGISTER_PARAM_ARRAY;  
 			valueArray = Const.APP_REGISTER_VALUE_ARRAY;

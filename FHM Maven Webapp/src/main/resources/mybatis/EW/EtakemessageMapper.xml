@@ -96,5 +96,20 @@
                  #{item}
 		</foreach>
 	</delete>
-	
+	<!--  最近聊天列表--> 
+	<select id="closetake" parameterType="pd" resultType="pd">
+		select
+				a.mid,
+				a.UID,	
+				a.TOUID,	
+				b.pic_url,
+				b.nickname,
+				a.MASSAGE,	
+				a.TIME,
+				a.STATUS		
+		from 
+				TB_ETAKEMESSAGE a,tb_user b
+		where
+		 		UID=#{UID} and b.uid=a.touid
+	</select>
 </mapper>

@@ -66,5 +66,11 @@ public class EtakemessageService {
 		dao.delete("EtakemessageMapper.deleteAll", ArrayDATA_IDS);
 	}
 	
+	/*
+	* 最近聊天列表接口
+	*/
+	public List<PageData> listclosetake(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("EtakemessageMapper.closetake", pd);
+	}
 }
 
