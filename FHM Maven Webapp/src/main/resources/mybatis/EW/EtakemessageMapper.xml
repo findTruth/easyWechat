@@ -99,7 +99,7 @@
 	<!--  最近聊天列表--> 
 	<select id="closetake" parameterType="pd" resultType="pd">
 		select
-				a.mid,
+				a.ETAKEMESSAGE_ID,
 				a.UID,	
 				a.TOUID,	
 				b.pic_url,
@@ -108,26 +108,8 @@
 				a.TIME,
 				a.STATUS		
 		from 
-				TB_ETAKEMESSAGE a,TB_USER b
+				TB_ETAKEMESSAGE a,tb_euser b
 		where
-		 		a.UID=#{UID} and b.EUSER_ID=a.TOUID
+		 		a.UID=#{UID} and b.EUSER_ID=a.touid
 	</select>
-	<!-- 聊天记录接口 -->
-	<select id="takelist" parameterType="pd" resultType="pd">
-	    select 
-	           a.mid,
-	           a.UID,
-	           a.TOUID,
-	           a.MASSAGE,
-	           a.TIME,
-	           a.STATUS
-	     from
-	          TB_ETAKEMESSAGE a
-	    where
-	          UID=#{uid}
-	   </select>
-	<!-- 删除最近聊天记录接口 -->
-	<delete id="deletedelclosetake" parameterType="pd">
-	    delete 
-	    </delete>
 </mapper>

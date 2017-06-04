@@ -95,6 +95,9 @@ public class appfriendController extends BaseController {
 							pd.put("UID", UID);
 							pd.put("FUID", FUID);
 							eaddfriendService.saveAgree(pd);							
+						}else{
+							result_code = -4101;
+							result_message = "agree值错误";
 						}
 				}else {
 					result_code = -1;
