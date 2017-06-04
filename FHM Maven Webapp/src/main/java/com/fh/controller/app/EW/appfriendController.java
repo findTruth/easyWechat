@@ -89,6 +89,11 @@ public class appfriendController extends BaseController {
 							//修改状态
 							eaddfriendService.editById(pd);
 							//添加好友到通讯录
+							String UID=pd.getString("uid");
+							String FUID=pd.getString("touid");
+							pd.put("ELINKBOOK_ID", get32UUID());
+							pd.put("UID", UID);
+							pd.put("FUID", FUID);
 							eaddfriendService.saveAgree(pd);							
 						}
 				}else {
