@@ -31,8 +31,9 @@ import com.fh.util.Tools;
 @Controller
 @RequestMapping(value="/apptake")
 public class appTakeController extends BaseController {
-    //最近聊天列表接口
+	@Resource(name="etakemessageService")
 	private EtakemessageService etakemessageService;
+	
 	@RequestMapping(value="/closetake")
 	@ResponseBody
 	public Object closetake(){
@@ -82,6 +83,7 @@ public class appTakeController extends BaseController {
 				if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
 					if(AppUtil.checkParam("takelist", pd)){	//检查参数
 						//TODO 留下最近聊天列表接口
+						map.put("data",etakemessageService.listtakelist(pd));
 					}else {
 						result_code = -1;
 						result_message = "参数错误";

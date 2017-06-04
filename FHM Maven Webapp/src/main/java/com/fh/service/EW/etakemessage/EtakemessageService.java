@@ -72,5 +72,17 @@ public class EtakemessageService {
 	public List<PageData> listclosetake(PageData pd)throws Exception{
 		return (List<PageData>)dao.findForList("EtakemessageMapper.closetake", pd);
 	}
+	/*
+	* 聊天记录接口
+	*/
+	public List<PageData> listtakelist(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("EtakemessageMapper.takelist", pd);
+	}
+	/*
+	* 删除最近聊天记录
+	*/
+	public void deletedelclosetake(String[] ArrayDATA_IDS)throws Exception{
+		dao.delete("EtakemessageMapper.deletedelclosetake", ArrayDATA_IDS);
+	}
 }
 

@@ -108,8 +108,26 @@
 				a.TIME,
 				a.STATUS		
 		from 
-				TB_ETAKEMESSAGE a,tb_user b
+				TB_ETAKEMESSAGE a,TB_USER b
 		where
-		 		UID=#{UID} and b.uid=a.touid
+		 		a.UID=#{UID} and b.EUSER_ID=a.TOUID
 	</select>
+	<!-- 聊天记录接口 -->
+	<select id="takelist" parameterType="pd" resultType="pd">
+	    select 
+	           a.mid,
+	           a.UID,
+	           a.TOUID,
+	           a.MASSAGE,
+	           a.TIME,
+	           a.STATUS
+	     from
+	          TB_ETAKEMESSAGE a
+	    where
+	          UID=#{uid}
+	   </select>
+	<!-- 删除最近聊天记录接口 -->
+	<delete id="deletedelclosetake" parameterType="pd">
+	    delete 
+	    </delete>
 </mapper>
