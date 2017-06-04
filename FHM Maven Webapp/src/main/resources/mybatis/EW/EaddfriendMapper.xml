@@ -140,7 +140,7 @@
 	<update id="editById" parameterType="pd">
 		update  TB_EADDFRIEND
 			set 
-				ADDSTATUS = 1,
+				ADDSTATUS = 1
 			where 
 				UID = #{uid} and AFUID = #{touid} 
 	</update>
