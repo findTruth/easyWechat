@@ -28,7 +28,6 @@ public class AppUtil  {
 		if(method=="registered"){// 注册
 			paramArray = Const.APP_REGISTERED_PARAM_ARRAY;  //参数
 			valueArray = Const.APP_REGISTERED_VALUE_ARRAY;  //参数名称
-			
 		}else if(method=="getAppuserByUsernmae"){//根据用户名获取会员信息
 			paramArray = Const.APP_GETAPPUSER_PARAM_ARRAY;  
 			valueArray = Const.APP_GETAPPUSER_VALUE_ARRAY;
@@ -38,6 +37,9 @@ public class AppUtil  {
 		}else if(method=="pushpassword"){
 			paramArray = Const.APP_PUSHPASSWORD_PARAM_ARRAY;  
 			valueArray = Const.APP_PUSHPASSWORD_VALUE_ARRAY;
+		}else if(method=="userlogin"){
+			paramArray = Const.APP_USERLOGIN_PARAM_ARRAY;  
+			valueArray = Const.APP_USERLOGIN_VALUE_ARRAY;
 		}
 		
 		

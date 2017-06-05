@@ -63,7 +63,38 @@ public class appUserController extends BaseController {
 		
 		return AppUtil.returnObject(new PageData(), map);
 	}
-	
+	@RequestMapping(value="/userlogin")
+	@ResponseBody
+	public Object userlogin(){
+		logBefore(logger, "用户登陆");
+		Map<String,Object> map = new HashMap<String,Object>();
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		int result_code = 0;
+		String result_message = "success";
+		
+		try{
+			if(Tools.checkKey("uid", pd.getString("FKEY"))){	//检验请求key值是否合法
+				if(AppUtil.checkParam("userlogin", pd)){	//检查参数
+					//TODO 留下注销接口
+				}else {
+					result_code = -1;
+					result_message = "参数错误";
+				}
+			}else{
+				result_code = -3;
+				result_message = "key值不合法";
+			}
+		}catch (Exception e){
+			logger.error(e.toString(), e);
+		}finally{
+			map.put("result_code", result_code);
+			map.put("result_message", result_message);
+			logAfter(logger);
+		}
+		
+		return AppUtil.returnObject(new PageData(), map);
+	}
 
 	
 }

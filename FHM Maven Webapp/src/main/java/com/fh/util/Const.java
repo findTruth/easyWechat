@@ -50,6 +50,10 @@ public class Const {
 	public static final String[] APP_USEROFF_PARAM_ARRAY = new String[]{"uid"};
 	public static final String[] APP_USEROFF_VALUE_ARRAY = new String[]{"用户id"};
 	
+	//app登陆接口
+	public static final String[] APP_USERLOGIN_PARAM_ARRAY = new String[]{"uid"};
+	public static final String[] APP_USERLOGIN_VALUE_ARRAY = new String[]{"用户id"};
+	
 	//app密码生成接口
 	public static final String[] APP_PUSHPASSWORD_PARAM_ARRAY = new String[]{"username","password"};
 	public static final String[] APP_PUSHPASSWORD_VALUE_ARRAY = new String[]{"账号","密码"};
