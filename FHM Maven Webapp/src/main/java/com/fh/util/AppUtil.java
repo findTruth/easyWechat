@@ -28,6 +28,7 @@ public class AppUtil  {
 		if(method=="registered"){// 注册
 			paramArray = Const.APP_REGISTERED_PARAM_ARRAY;  //参数
 			valueArray = Const.APP_REGISTERED_VALUE_ARRAY;  //参数名称
+			
 		}else if(method=="getAppuserByUsernmae"){//根据用户名获取会员信息
 			paramArray = Const.APP_GETAPPUSER_PARAM_ARRAY;  
 			valueArray = Const.APP_GETAPPUSER_VALUE_ARRAY;

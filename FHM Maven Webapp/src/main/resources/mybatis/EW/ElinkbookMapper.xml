@@ -92,4 +92,42 @@
 		</foreach>
 	</delete>
 	
+	<!-- 通过UID获取数据 -->
+	<select id="listByUid" parameterType="pd" resultType="pd">
+		select 
+			UID,	
+			FUID,	
+			TIME,	
+			UNICKNAME,	
+			ELINKBOOK_ID
+		from 
+			TB_ELINKBOOK
+		where 
+			UID = #{uid}
+	</select>
+	
+	<!-- 同意申请后，添加好友-->
+	<insert id="saveAgree" parameterType="pd">
+		insert into TB_ELINKBOOK(
+			UID,	
+			FUID,	
+			TIME,
+			UNICKNAME,	
+			ELINKBOOK_ID
+		) values (
+			#{UID},	
+			#{FUID},	
+			now(),	
+			(select NICKNAME from tb_euser where euser_id=#{FUID}),	
+			#{ELINKBOOK_ID}
+		)
+	</insert>
+	
+	<!-- 删除好友-->
+	<insert id="deleteByuid" parameterType="pd">
+		delete from TB_ELINKBOOK
+		where 
+			FUID = #{uid}
+	</insert>
+	
 </mapper>

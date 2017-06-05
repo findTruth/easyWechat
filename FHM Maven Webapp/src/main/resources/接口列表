@@ -10,3 +10,63 @@ ep:      FHM/appbase/pushpassword.do?username=admin&password=1234
 加密参数：uid
 连接：xxx/FHM/appuser/useroff.do
 参数：uid
+
+3.1 通讯录接口
+加密参数：uid
+连接：xxx/FHM/applink/linklist.do
+参数：uid
+
+4.1 好友申请列表接口
+加密参数：uid
+连接：xxx/FHM/appfriend/friendlist.do
+参数：uid type
+
+4.2 同意好友请求接口
+加密参数：uid
+连接：xxx/FHM/appfriend/agree.do
+参数：uid touid agree
+
+4.3 加好友模糊查询接口
+加密参数：uid
+连接：xxx/FHM/appfriend/friendselect.do
+参数：uid message
+
+4.4 好友信息接口
+加密参数：uid
+连接：xxx/FHM/appfriend/friendinfo.do
+参数：uid
+
+4.5 删除好友接口
+加密参数：uid
+连接：xxx/FHM/appfriend/delfriend.do
+参数：uid 
+
+2.1 最近聊天列表接口
+加密参数：uid
+连接：xxx/FHM/apptake/closetake.do
+参数：uid
+
+2.2 聊天记录接口
+加密参数：uid
+连接：xxx/FHM/apptake/takelist.do
+参数：uid
+
+2.3 删除最近聊天记录接口
+加密参数：nid
+连接：xxx/FHM/apptake/delclosetake.do
+参数：nid
+
+2.4 查看聊天推送接口
+加密参数：uid
+连接：xxx/FHM/apptake/seetakepush.do
+参数：uid
+
+2.5 发送消息接口
+加密参数：uid
+连接：xxx/FHM/apptake/sendmessage.do
+参数：uid
+
+2.6 修改最近聊天推送状态
+加密参数：nid
+连接：xxx/FHM/apptake/changetakestatus.do
+参数：nid

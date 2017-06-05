@@ -66,5 +66,12 @@ public class EuserService {
 		dao.delete("EuserMapper.deleteAll", ArrayDATA_IDS);
 	}
 	
+	/*
+	* 通过username获取数据
+	*/
+	public PageData findByUsername(PageData pd)throws Exception{
+		return (PageData)dao.findForObject("EuserMapper.findByUsername", pd);
+	}
+	
 }
 
